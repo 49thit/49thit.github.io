@@ -4,8 +4,13 @@ title: "An Alaskan serial adventure in IT..."
 fallback_episode: "/episodeNEXT"
 ---
 
-{% assign episode001_post = site.posts | where_exp: "post", "post.url contains 'episode001'" | first %}
-{% assign fallback_episode_path = episode001_post.url | default: page.fallback_episode %}
+{% assign posts_with_episode = site.posts | where_exp: "p", "p.episode" %}
+{% if posts_with_episode and posts_with_episode.size > 0 %}
+  {% assign preferred_first_post = site.posts | sort: "episode" | first %}
+{% else %}
+  {% assign preferred_first_post = site.posts | where_exp: "post", "post.url contains 'episode001'" | first %}
+{% endif %}
+{% assign fallback_episode_path = preferred_first_post.url | default: page.fallback_episode %}
 
 <article class="post-article">
   <div class="continue-panel" data-continue-panel>

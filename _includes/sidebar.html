@@ -1,4 +1,4 @@
-<nav class="post-nav">
+<nav class="post-nav" aria-label="Episodes">
   <button
     class="post-nav__toggle"
     type="button"
@@ -8,8 +8,13 @@
     episodes...
     <span class="post-nav__icon" aria-hidden="true"></span>
   </button>
-  {% assign episodes = site.posts | sort: "title" | reverse %}
-  <ul id="post-nav-list">
+  {% assign posts_with_episode = site.posts | where_exp: "p", "p.episode" %}
+  {% if posts_with_episode and posts_with_episode.size > 0 %}
+    {% assign episodes = site.posts | sort: "episode" | reverse %}
+  {% else %}
+    {% assign episodes = site.posts | sort: "title" | reverse %}
+  {% endif %}
+  <ul id="post-nav-list" aria-hidden="false">
     {% for post in episodes %}
       <li>
         {% if post.url == page.url %}
@@ -24,13 +29,35 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.querySelector(".post-nav__toggle");
-    const list = document.querySelector(".post-nav ul");
+    const list = document.getElementById("post-nav-list");
     if (!toggle || !list) return;
 
-    toggle.addEventListener("click", function () {
+    function setExpanded(expanded) {
+      toggle.setAttribute("aria-expanded", expanded.toString());
+      list.classList.toggle("is-open", expanded);
+      list.setAttribute("aria-hidden", (!expanded).toString());
+    }
+
+    // Initialize ARIA state to match current expansion and CSS
+    let initialExpanded = toggle.getAttribute("aria-expanded") === "true";
+    try {
+      const computed = window.getComputedStyle(list);
+      if (computed && computed.display !== "none") {
+        initialExpanded = true;
+      }
+    } catch (e) {}
+    setExpanded(initialExpanded);
+
+    function onActivate(event) {
+      if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") {
+        return;
+      }
+      event.preventDefault();
       const isExpanded = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", (!isExpanded).toString());
-      list.classList.toggle("is-open", !isExpanded);
-    });
+      setExpanded(!isExpanded);
+    }
+
+    toggle.addEventListener("click", onActivate);
+    toggle.addEventListener("keydown", onActivate);
   });
 </script>

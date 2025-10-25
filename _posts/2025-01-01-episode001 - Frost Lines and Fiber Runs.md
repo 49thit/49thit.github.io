@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "episode001 – Frost Lines and Fiber Lines"
+episode: 1
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor, nibh vel posuere congue, velit nibh tempor purus, in suscipit risus lectus non metus. Cras a porttitor neque, non pretium dui. Duis eu tincidunt justo, ut fermentum risus. Aliquam bibendum, mi ac fermentum iaculis, magna purus bibendum lorem, lacinia feugiat justo risus at mi.
 

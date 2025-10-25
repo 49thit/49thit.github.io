@@ -13,6 +13,7 @@
 
   {% seo title=false %}
   {% feed_meta %}
+  <meta name="fallback-episode" content="{{ page.fallback_episode | default: '/episode001-frost-lines-and-fiber-lines/' }}">
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/images/favicon/apple-touch-icon.png" | relative_url }}">
@@ -26,6 +27,11 @@
   <meta name="theme-color" content="#ffffff">
   <!-- Favicon -->
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Styles -->
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
 
   {%- include custom_head.html -%}

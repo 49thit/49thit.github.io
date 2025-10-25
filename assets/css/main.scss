@@ -1,7 +1,6 @@
 ---
 ---
 
-@import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap";
 
 :root {
   --brand-navy: #0b1f4d;
@@ -535,6 +534,15 @@ main.page-content {
   color: var(--brand-gold);
   transform: none;
   box-shadow: none;
+  text-decoration: none;
+}
+
+/* Focus visibility for keyboard users */
+.post-nav__toggle:focus-visible,
+.continue-panel__cta:focus-visible,
+.sidebar nav a.post-nav__link:focus-visible {
+  outline: 3px solid var(--brand-blue);
+  outline-offset: 2px;
   text-decoration: none;
 }
 
