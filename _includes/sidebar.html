@@ -14,8 +14,22 @@
   {% else %}
     {% assign episodes = site.posts | sort: "title" | reverse %}
   {% endif %}
+  {% assign next_posts = site.posts | where_exp: "p", "p.title contains 'episodeNEXT'" %}
+  {% if next_posts and next_posts.size > 0 %}
+    {% assign next_post = next_posts | first %}
+  {% endif %}
   <ul id="post-nav-list" aria-hidden="false">
+    {% if next_post %}
+      <li>
+        {% if next_post.url == page.url %}
+          <span class="post-nav__link" aria-current="page">{{ next_post.title }}</span>
+        {% else %}
+          <a class="post-nav__link" href="{{ next_post.url | relative_url }}">{{ next_post.title }}</a>
+        {% endif %}
+      </li>
+    {% endif %}
     {% for post in episodes %}
+      {% unless post.title contains 'episodeNEXT' %}
       <li>
         {% if post.url == page.url %}
           <span class="post-nav__link" aria-current="page">{{ post.title }}</span>
@@ -23,6 +37,7 @@
           <a class="post-nav__link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
         {% endif %}
       </li>
+      {% endunless %}
     {% endfor %}
   </ul>
 </nav>

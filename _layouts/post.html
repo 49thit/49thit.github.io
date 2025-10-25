@@ -8,24 +8,43 @@ layout: default
   <div class="post-article__content">
     {{ content }}
   </div>
-  {% assign posts_with_episode = site.posts | where_exp: "p", "p.episode" %}
-  {% if posts_with_episode and posts_with_episode.size > 0 %}
-    {% assign ordered_posts = site.posts | sort: "episode" %}
-  {% else %}
-    {% assign ordered_posts = site.posts | sort: "title" %}
+  {% assign numbered_posts = site.posts | where_exp: "p", "p.episode" | sort: "episode" %}
+  {% assign next_posts = site.posts | where_exp: "p", "p.title contains 'episodeNEXT'" %}
+  {% assign next_post = next_posts | first %}
+  {% assign is_episode_next = false %}
+  {% if page.title contains 'episodeNEXT' or page.url contains '/episodeNEXT' %}
+    {% assign is_episode_next = true %}
   {% endif %}
   {% assign found_current = false %}
   {% assign next_episode = nil %}
-  {% for post in ordered_posts %}
-    {% if found_current %}
-      {% assign next_episode = post %}
-      {% break %}
+
+  {% if numbered_posts and numbered_posts.size > 0 %}
+    {% for post in numbered_posts %}
+      {% if found_current %}
+        {% assign next_episode = post %}
+        {% break %}
+      {% endif %}
+      {% if post.url == page.url %}
+        {% assign found_current = true %}
+      {% endif %}
+    {% endfor %}
+
+    {% if next_episode == nil and is_episode_next == false and next_post %}
+      {% assign next_episode = next_post %}
     {% endif %}
-    {% if post.url == page.url %}
-      {% assign found_current = true %}
-    {% endif %}
-  {% endfor %}
-  {% if next_episode and page.title != "episodeNEXT" %}
+  {% else %}
+    {% assign ordered_posts = site.posts | sort: "title" %}
+    {% for post in ordered_posts %}
+      {% if found_current %}
+        {% assign next_episode = post %}
+        {% break %}
+      {% endif %}
+      {% if post.url == page.url %}
+        {% assign found_current = true %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% if next_episode and is_episode_next == false %}
   <footer class="post-article__footer">
     <a
       class="continue-panel__cta post-article__next-button"
