@@ -20,12 +20,71 @@ document.addEventListener("DOMContentLoaded", function () {
   const letterDelay = 280;
   let typingActive = false;
   let typedOnce = false;
+  let revealTimerId = null;
+  const headerKey = "49thIT:headerRevealed";
+  let revealed = false;
+  try {
+    const navEntries = performance.getEntriesByType ? performance.getEntriesByType("navigation") : null;
+    const nav = navEntries && navEntries.length ? navEntries[0] : null;
+    const isReload = nav ? nav.type === "reload" : (performance.navigation && performance.navigation.type === 1);
+    if (isReload) {
+      localStorage.removeItem(headerKey);
+    }
+    revealed = localStorage.getItem(headerKey) === "1";
+  } catch (e) {
+    revealed = false;
+  }
 
-  typedEl.innerHTML = "";
-  cursorEl.classList.remove("is-complete");
-  cursorEl.setAttribute("role", "button");
-  cursorEl.setAttribute("tabindex", "0");
-  cursorEl.setAttribute("aria-label", "Type command 49thIT");
+  if (promptLabel) {
+    // Reset banner reveal when clicking the prompt label (navigates to site root)
+    promptLabel.addEventListener("click", function () {
+      try {
+        localStorage.removeItem(headerKey);
+      } catch (e) {}
+      resetHeaderReveal();
+    });
+    // Keyboard activation support (Enter/Space)
+    promptLabel.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        try {
+          localStorage.removeItem(headerKey);
+        } catch (err) {}
+        resetHeaderReveal();
+      }
+    });
+  }
+
+  function applyRevealedState() {
+    commandLine.classList.add("is-active");
+    typedEl.innerHTML = "";
+    const segs = [
+      { text: "49", className: "segment-leading" },
+      { text: "th", className: "segment-small" },
+      { text: "IT", className: "segment-trailing" },
+    ];
+    segs.forEach(function (seg) {
+      const span = document.createElement("span");
+      if (seg.className) span.className = seg.className;
+      span.textContent = seg.text;
+      typedEl.appendChild(span);
+    });
+    cursorEl.classList.remove("is-typing");
+    cursorEl.classList.add("is-complete");
+    cursorEl.classList.add("is-hidden");
+    cursorEl.removeAttribute("role");
+    cursorEl.removeAttribute("tabindex");
+  }
+
+  if (!revealed) {
+    typedEl.innerHTML = "";
+    cursorEl.classList.remove("is-complete");
+    cursorEl.setAttribute("role", "button");
+    cursorEl.setAttribute("tabindex", "0");
+    cursorEl.setAttribute("aria-label", "Type command 49thIT");
+  } else {
+    typedOnce = true;
+    applyRevealedState();
+  }
 
   function typeCommand() {
     if (typingActive || typedOnce) return;
@@ -47,6 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
       cursorEl.removeAttribute("tabindex");
       typingActive = false;
       typedOnce = true;
+      try {
+        localStorage.setItem(headerKey, "1");
+      } catch (e) {}
     }
 
     function step() {
@@ -89,8 +151,48 @@ document.addEventListener("DOMContentLoaded", function () {
     typeCommand();
   }
 
-  cursorEl.addEventListener("click", handleActivation);
-  cursorEl.addEventListener("keydown", handleActivation);
+  function resetHeaderReveal() {
+    try {
+      localStorage.removeItem(headerKey);
+    } catch (e) {}
+    revealed = false;
+    typedOnce = false;
+    typingActive = false;
+    commandLine.classList.remove("is-active");
+    typedEl.innerHTML = "";
+    cursorEl.classList.remove("is-typing");
+    cursorEl.classList.remove("is-complete");
+    cursorEl.classList.remove("is-hidden");
+    cursorEl.setAttribute("role", "button");
+    cursorEl.setAttribute("tabindex", "0");
+    cursorEl.setAttribute("aria-label", "Type command 49thIT");
+    // Ensure handlers are attached (remove first to avoid duplicates)
+    cursorEl.removeEventListener("click", handleActivation);
+    cursorEl.removeEventListener("keydown", handleActivation);
+    cursorEl.addEventListener("click", handleActivation);
+    cursorEl.addEventListener("keydown", handleActivation);
+    // Restart auto trigger timer
+    if (revealTimerId) {
+      clearTimeout(revealTimerId);
+    }
+    revealTimerId = window.setTimeout(function () {
+      if (!typingActive && !typedOnce) {
+        typeCommand();
+      }
+    }, 30000);
+  }
+
+  if (!revealed) {
+    cursorEl.addEventListener("click", handleActivation);
+    cursorEl.addEventListener("keydown", handleActivation);
+
+    revealTimerId = window.setTimeout(function () {
+      // Auto-trigger typing after 30 seconds if not already revealed/typing
+      if (!typingActive && !typedOnce) {
+        typeCommand();
+      }
+    }, 30000);
+  }
 });
 
 /* 2) Continue reading panel (uses localStorage + optional meta fallback) */
