@@ -861,3 +861,92 @@ figcaption {
     scroll-behavior: auto !important;
   }
 }
+
+/* Follow/Subscribe block */
+.follow-subscribe {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: 1rem;
+  border-top: 1px solid rgba(11, 31, 77, 0.12);
+  max-width: 68ch;
+}
+
+.follow-subscribe h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+  color: var(--brand-purple);
+}
+
+.fs-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.fs-notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.6rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.fs-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  background-color: var(--brand-panel);
+  border: 1px solid var(--brand-purple);
+  color: var(--brand-purple);
+  border-radius: 0;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.fs-link:hover,
+.fs-link:focus {
+  background-color: var(--brand-purple);
+  color: var(--brand-gold);
+  text-decoration: none;
+}
+
+.fs-link:focus-visible {
+  outline: 3px solid var(--brand-blue);
+  outline-offset: 2px;
+}
+
+.fs-icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+}
+
+/* raster/brand icons */
+.fs-icon-img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.fs-note {
+  color: var(--brand-muted);
+  font-size: 0.95rem;
+}
+
+.fs-link.is-disabled {
+  border-color: var(--brand-meder);
+  color: var(--brand-muted);
+  cursor: default;
+}
+
+.fs-link.is-disabled:hover,
+.fs-link.is-disabled:focus {
+  background: transparent;
+  color: var(--brand-muted);
+  text-decoration: none;
+}
