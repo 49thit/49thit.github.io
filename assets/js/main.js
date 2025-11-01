@@ -249,3 +249,77 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 })();
+(function () {
+  function onReady(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn, { once: true });
+  }
+
+  function debounce(fn, wait) {
+    let t;
+    return function () {
+      clearTimeout(t);
+      t = setTimeout(fn, wait);
+    };
+  }
+
+  function clampFsImage() {
+    const fs = document.querySelector(".follow-subscribe");
+    if (!fs) return;
+    const links = fs.querySelector(".fs-links");
+    const box = fs.querySelector(".fs-image");
+    const img = fs.querySelector(".fs-image img");
+    if (!links || !box || !img) return;
+
+    const isSingleCol = window.matchMedia("(max-width: 820px)").matches;
+    if (isSingleCol) {
+      box.style.height = "";
+      box.style.marginTop = "";
+      img.style.height = "";
+      img.style.maxHeight = "";
+      return;
+    }
+
+    // Compute exact vertical span from top of first button to bottom of last button
+    const items = links.querySelectorAll(".fs-link");
+    if (!items.length) {
+      const h = Math.ceil(links.getBoundingClientRect().height);
+      box.style.marginTop = "0px";
+      box.style.height = h + "px";
+      img.style.height = "100%";
+      img.style.maxHeight = "100%";
+      img.style.objectFit = "contain";
+      img.style.width = "100%";
+      return;
+    }
+
+    const firstRect = items[0].getBoundingClientRect();
+    const lastRect = items[items.length - 1].getBoundingClientRect();
+    const linksRect = links.getBoundingClientRect();
+
+    const topOffset = Math.max(0, Math.round(firstRect.top - linksRect.top));
+    const totalHeight = Math.max(0, Math.round(lastRect.bottom - firstRect.top));
+
+    // Align the image box top with the first button, and match total button stack height
+    box.style.marginTop = topOffset + "px";
+    box.style.height = totalHeight + "px";
+    img.style.height = "100%";
+    img.style.maxHeight = "100%";
+    img.style.objectFit = "contain";
+    img.style.width = "100%";
+  }
+
+  onReady(function () {
+    clampFsImage();
+    const img = document.querySelector(".fs-image img");
+    if (img) {
+      if (img.complete) {
+        clampFsImage();
+      } else {
+        img.addEventListener("load", clampFsImage, { once: true });
+      }
+    }
+  });
+  window.addEventListener("load", clampFsImage);
+  window.addEventListener("resize", debounce(clampFsImage, 150));
+})();

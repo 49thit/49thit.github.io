@@ -47,4 +47,8 @@ Stay tuned. Next time on 49thIT, Palin helps get the coffee maker online.
       <span>Patreon (coming soon)</span>
     </span>
   </div>
+
+  <div class="fs-image">
+    <img src="{{ '/assets/img/sidebar.png' | relative_url }}" alt="49thIT promo" loading="lazy" decoding="async" />
+  </div>
 </div>
