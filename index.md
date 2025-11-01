@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "An Alaskan serial adventure in IT..."
+permalink: /
 fallback_episode: "/episodeNEXT"
 ---
 

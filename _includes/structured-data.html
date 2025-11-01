@@ -1,0 +1,68 @@
+{% assign page_url = page.url | absolute_url %}
+{% assign description_text = include.description | default: "" %}
+{% assign cleaned_description = description_text | strip_html | strip_newlines | strip %}
+{% assign image_path = include.image | default: site.logo %}
+{% if image_path != "" %}
+  {% assign image_url = image_path | absolute_url %}
+{% endif %}
+
+{% if page.collection == "posts" %}
+  {% assign published_date = page.date | date_to_xmlschema %}
+  {% assign modified_source = page.last_modified_at | default: page.date %}
+  {% assign modified_date = modified_source | date_to_xmlschema %}
+  {% assign author_name = page.author | default: site.author %}
+  {% capture article_json %}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ page_url | jsonify }}
+  },
+  "headline": {{ page.title | strip_html | strip_newlines | strip | jsonify }},
+  {% if cleaned_description != "" %}
+  "description": {{ cleaned_description | jsonify }},
+  {% endif %}
+  {% if image_url %}
+  "image": {{ image_url | jsonify }},
+  {% endif %}
+  "datePublished": {{ published_date | jsonify }},
+  "dateModified": {{ modified_date | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ author_name | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ site.logo | absolute_url | jsonify }}
+    }
+  }{% if page.tags and page.tags != empty %},
+  "keywords": {{ page.tags | join: ", " | jsonify }}{% endif %}
+}
+  {% endcapture %}
+  <script type="application/ld+json">{{ article_json | strip | replace: "\n", "" }}</script>
+{% elsif page.url == "/" %}
+  {% capture website_json %}
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": {{ page_url | jsonify }},
+  "name": {{ site.title | jsonify }},
+  {% if cleaned_description != "" %}
+  "description": {{ cleaned_description | jsonify }},
+  {% endif %}
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ site.logo | absolute_url | jsonify }}
+    }
+  }
+}
+  {% endcapture %}
+  <script type="application/ld+json">{{ website_json | strip | replace: "\n", "" }}</script>
+{% endif %}

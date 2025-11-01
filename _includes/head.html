@@ -11,15 +11,26 @@
     {% endif %}
   </title>
 
+  {% assign seo_description_source = page.blurb | default: page.description | default: page.excerpt %}
+  {% assign seo_description = seo_description_source | strip_html | strip_newlines | strip %}
+  {% assign seo_image = page.image | default: site.logo %}
+
   {% seo title=false %}
   {% feed_meta %}
-  {% if page.blurb %}
-    {% assign blurb_meta = page.blurb | strip_html | strip_newlines | strip %}
-    <meta name="description" content="{{ blurb_meta | escape }}">
-    <meta property="og:description" content="{{ blurb_meta | escape }}">
-    <meta name="twitter:description" content="{{ blurb_meta | escape }}">
-    <meta name="bluesky:description" content="{{ blurb_meta | escape }}">
+
+  {% if seo_description != "" %}
+    <meta name="description" content="{{ seo_description | escape }}">
+    <meta property="og:description" content="{{ seo_description | escape }}">
+    <meta name="twitter:description" content="{{ seo_description | escape }}">
+    <meta name="bluesky:description" content="{{ seo_description | escape }}">
   {% endif %}
+  {% if page.tags and page.tags != empty %}
+    {% for tag in page.tags %}
+      <meta property="article:tag" content="{{ tag | escape }}">
+    {% endfor %}
+    <meta name="keywords" content="{{ page.tags | join: ", " | escape }}">
+  {% endif %}
+  {% include structured-data.html description=seo_description image=seo_image %}
   <meta name="fallback-episode" content="{{ page.fallback_episode | default: '/episode001-frost-lines-and-fiber-lines/' }}">
 
   <!-- Favicon -->

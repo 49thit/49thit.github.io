@@ -1,0 +1,24 @@
+{% assign entry_url = post.url | absolute_url %}
+{% assign summary_source = post.blurb | default: post.description | default: post.excerpt %}
+{% assign summary_text = summary_source | strip_html | strip_newlines | strip %}
+{% assign updated_source = post.last_modified_at | default: post.date %}
+{% assign updated_date = updated_source | date_to_xmlschema %}
+<entry>
+  <title type="html">{{ post.title | xml_escape }}</title>
+  <link href="{{ entry_url }}" />
+  <id>{{ entry_url }}</id>
+  <published>{{ post.date | date_to_xmlschema }}</published>
+  <updated>{{ updated_date }}</updated>
+  <author>
+    <name>{{ post.author | default: site.author | xml_escape }}</name>
+  </author>
+  {% if summary_text != "" %}
+  <summary type="html">{{ summary_text | xml_escape }}</summary>
+  {% endif %}
+  <content type="html">{{ post.content | xml_escape }}</content>
+  {% if post.tags %}
+    {% for tag in post.tags %}
+  <category term="{{ tag | xml_escape }}" />
+    {% endfor %}
+  {% endif %}
+</entry>

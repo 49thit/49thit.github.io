@@ -1,12 +1,22 @@
 title: "49thIT"
 author: "49thIT"
 description: "An Alaskan serial adventure in IT..."
+logo: "/logo.png"
+twitter_username: "49thIt"
+social:
+  name: "49thIT"
+  links:
+    - "https://49thit.substack.com/"
+    - "https://x.com/49thIt"
+    - "https://bsky.app/profile/49thit.bsky.social"
+    - "https://medium.com/@49thit"
+    - "https://www.wattpad.com/story/345862277-49th-it"
 
 # Use only local theme files you’ve vendored into the repo
 theme: null
 
 # Optional: nicer URLs and correct base path
-permalink: /:title/
+permalink: /:slug/
 url: "https://49thit.github.io"
 baseurl: ""
 
@@ -14,3 +24,13 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      image: "/assets/img/thumbnail.png"
+      seo:
+        type: "Article"

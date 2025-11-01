@@ -2,9 +2,11 @@
 layout: post
 title: "episode001 – Palin Picks the Right Shoes"
 episode: 1
-blurb: >-
+slug: episode001-palin-picks-the-right-shoes
+blurb: &blurb >-
   In which our nearly middle-aged IT hero, Palin Warwick, isn't worried about
   wearing goretex shoes, since it hardly rains in Juneau anymore.
+description: *blurb
 tags:
   - alaska
   - technology

@@ -22,7 +22,7 @@
           <div class="credits">
           &copy;&nbsp;{{ "now" | date: "%Y" }}&nbsp;{{site.author}}
           {% if page.tags and page.tags != empty %}
-          &nbsp;|&nbsp;<span class="credits__tags">Tags: {{ page.tags | join: ", " }}</span>
+          &nbsp;|&nbsp;<span class="credits__tags">{{ page.tags | join: ", " }}</span>
           {% else %}
           &nbsp;
           {% endif %}
