@@ -17,7 +17,7 @@ theme: null
 
 # Optional: nicer URLs and correct base path
 permalink: /:slug/
-url: "https://49thit.github.io"
+url: "https://49thit.com"
 baseurl: ""
 
 plugins:
