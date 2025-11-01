@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "episodeNEXT - coming up... "
+blurb: "Next up, Palin takes on the office coffee maker and brings it online."
 ---
 Stay tuned. Next time on 49thIT, Palin helps get the coffee maker online.
 

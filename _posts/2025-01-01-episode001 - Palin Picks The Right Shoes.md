@@ -2,6 +2,14 @@
 layout: post
 title: "episode001 – Palin Picks the Right Shoes"
 episode: 1
+blurb: >-
+  In which our nearly middle-aged IT hero, Palin Warwick, isn't worried about
+  wearing goretex shoes, since it hardly rains in Juneau anymore.
+tags:
+  - alaska
+  - technology
+  - bureaucracy
+  - scifi
 ---
  The old kid gave a sad glance at his favorite action shoes. "Cross-trainer" is what the label at the store said. Mom called them sneakers, but that was a long time ago. Palin Warwick didn't care what they were called, all he knew is his feet gushed with joy when they were on. Comfy and sleek, sky blue with a big silver "N" on the side, they weighed nothing and empowered him with imaginary fleet steps. They weren't goretex, but that didn't matter--it hardly rained in Juneau.
 
