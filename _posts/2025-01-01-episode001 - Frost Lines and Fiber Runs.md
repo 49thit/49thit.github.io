@@ -1,12 +1,20 @@
 ---
 layout: post
-title: "episode001 – Frost Lines and Fiber Lines"
+title: "episode001 – Palin Picks The Right Shoes"
 episode: 1
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor, nibh vel posuere congue, velit nibh tempor purus, in suscipit risus lectus non metus. Cras a porttitor neque, non pretium dui. Duis eu tincidunt justo, ut fermentum risus. Aliquam bibendum, mi ac fermentum iaculis, magna purus bibendum lorem, lacinia feugiat justo risus at mi.
+ The old kid gave a sad glance at his favorite action shoes. "Cross-trainer" is what the label at the store said. Mom called them sneakers, but that was a long time ago. Palin Warwick didn't care what they were called, all he knew is his feet gushed with joy when they were on. Comfy and sleek, sky blue with a big silver "N" on the side, they weighed nothing and empowered him with imaginary fleet steps. They weren't goretex, but that didn't matter--it hardly rained in Juneau.
 
-Curabitur dapibus fermentum ipsum at cursus. Nulla facilisi. Proin sagittis quam sit amet lectus scelerisque, ut tristique metus hendrerit. Pellentesque posuere tempor ligula ac viverra. Morbi id mollis elit. Nunc euismod lorem ut dui pharetra, ac pretium metus tincidunt.
+He wasn't athletic, although "athletic heart" was the term the traveling health insurance guy had used when removing the blood pressure cuff. Palin, the pseudo-doctor accurately guessed, was coasting through his thirties on reserves left over from playing sports as a kid. "Pressure a little too high. Keep an eye on that. Otherwise a model employee, I'm sure."
 
-Integer nec tellus dolor. Sed accumsan, erat vitae tincidunt bibendum, tortor dui dapibus nulla, sed vestibulum diam orci sit amet ipsum. Curabitur luctus est eu mi tristique, eget efficitur lorem consectetur. In luctus, ligula nec tempor dictum, augue odio pharetra dui, id efficitur erat diam id augue.
+Any normal Monday he'd wear his action shoes with a black t-shirt and clean jeans. But today was not normal. Today there would be fancy people in the office—-people who thought the way someone dressed had something to do with the quality of their character. Palin agreed.
 
-Donec pharetra orci ut nibh iaculis, id consequat tellus pellentesque. Quisque nec fermentum mi. Nulla vitae porttitor leo. Integer sed bibendum dui, et tristique nisi. Pellentesque semper tincidunt leo id laoreet. Pellentesque volutpat consectetur arcu vulputate gravida.
+But it wasn't a normal Monday. "The Board is coming! The Board is coming!" No one yelled while running down cubicle-lined hallways waving their arms in the air. But they might as well have been. Juneau, the capital of Alaska, was also the business and political terminus, and the GACIS Board of Directors, having flown in from all around, was on their way to meet with members of the legislature.
+
+An email had come out early last week warning Palin and the other 4th-floor nerds that the Board will "get a tour and flawless demo of the robot, if you please." The language reeked of Lord Stone's prim British accent, even though the email came from his assistant Mandy. The only thing Mandy-ish about the email was the quote at the bottom below the emoticons: "All that we are is the result of what we have thought. -Buddha."
+
+Palin's boss, Ryan Stone, was far from a British Lord. Which came first? Palin wondered, the nickname or the accent. It was a question of subjectivity and Palin agreed not to think too hard on it.
+
+Despite Stone's propensity toward the dramatic, he was Palin's boss and Lord over all the GACIS Managed Technology Services department. And so, as a good middle manager, when asked to "step up the appearance game, will ya lads?" Palin Warwick obliged.
+
+He pushed the action shoes aside and reached for a pair of black leather Clarks.
