@@ -889,8 +889,9 @@ figcaption {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  align-items: flex-start;
+  align-items: stretch;
   max-width: 68ch;
+  width: 100%;
 }
 
 .fs-notes {
@@ -913,6 +914,7 @@ figcaption {
   transition: background-color 0.25s ease, color 0.25s ease;
   text-decoration: none;
   line-height: 1;
+  width: 100%;
 }
 
 .fs-link:hover,
