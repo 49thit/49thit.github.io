@@ -2,12 +2,12 @@
 layout: default
 title: "An Alaskan serial adventure in IT..."
 permalink: /
-fallback_episode: "/episodeNEXT"
+fallback_episode: "/episode001-palin-picks-the-right-shoes"
 ---
 
 {% assign posts_with_episode = site.posts | where_exp: "p", "p.episode" %}
 {% if posts_with_episode and posts_with_episode.size > 0 %}
-  {% assign preferred_first_post = site.posts | sort: "episode" | first %}
+  {% assign preferred_first_post = posts_with_episode | sort: "episode" | first %}
 {% else %}
   {% assign preferred_first_post = site.posts | where_exp: "post", "post.url contains 'episode001'" | first %}
 {% endif %}
