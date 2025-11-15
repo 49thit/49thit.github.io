@@ -1,0 +1,8 @@
+# Track only the generated site and GitHub workflow files.
+/*
+!/.gitignore
+!/_site/
+!/_site/**
+!/.github/
+!/.github/workflows/
+!/.github/workflows/**
