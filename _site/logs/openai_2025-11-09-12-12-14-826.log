@@ -1,0 +1,41 @@
+timestamp: 2025-11-09T12:12:14-09:00
+model: gpt-4o-mini
+
+content(system): You are a helpful assistant that returns concise topic tags as JSON.
+content(user): You are helping publish a serialized science-fiction story. Return JSON that matches the provided schema.
+Constraints:
+- Exactly 3 unique tags.
+- Lowercase kebab-case (letters, numbers).
+- No hyphens, single words only.
+- Do NOT reuse these defaults: alaska, it, scifi.
+- Considering the themes of corporate bureaucracy, technology, and Alaska, generate tags using the short blurb and body below.
+
+Short blurb:
+kla sjdflkjasld fkjlaksdjf lkasdjf klsdajlfk dlkfjdaslk fjldskfj lksdajf lkdjfk dsfklj dslkfjd kfj dksl fj dkfjlaskdjf sdfjklsd jfoiejofijsdk fjsadfdskjfksd fklsdj fklsdj fdsfjioej faisdfj lksad fsdfsd fsdfjkdsdf asdfkjsdoi  ifdjs fijsdfoij asfjlkasje k jaskjlk adlkfj alsdkfjl sadjf sadlkf sdklfsdk fsdklfjlkdsj iofj oifjs oiefoiajsdoifjasd foiadsjf sdafij diofjds fdsfijsadofijdsfasdfslkafj lksadfjl sdaf
+
+Body:
+Fancy shoes and suits and pantsuits smelling of cologne and perfume and toxic optimism crowded the 2nd floor lobby. Palin hadn’t forgotten that today the GACIS Education Division was hosting its annual School Administrator Inservice. But he had been in denial.
+
+“Damn you Jen,” he muttered.
+
+“Autorouting from four to two complete,” her delayed voice announced.
+
+“Oh good, they found you.” Gerry, at the head of the tour group, flashed big white teeth and blocked the door open. “This, ladies and gentlemen, is one of our MTS Team Leads. There are—” he counted on fingers “—six of y’all?”
+
+Palin nodded.
+
+“Six leads of the Managed Technology Services division,” Gerry announced, “that work up on the 4th floor, and statewide, what—” he waved Palin out of the elevator “—another twenty or thirty?”
+
+Palin gave an amicable shrug.
+
+“Say,” Gerry whispered. “A bit of Inservice on the new coffee maker after you’ve got it setup would be great.” He didn’t wait for a reply but waved his tour group on.
+
+Inservice was a fancy word schools used to describe adults spending time learning stuff. Palin wondered, not for the first time, what it must be like to work in a field where learning new things every day wasn’t, as grandpa used to say, part-and-parcel.
+
+“Each Lead runs a dynamic matrix-style team”—Gerry’s voice faded as his tour strolled down the hallway—“that may, depending on project, include any number of specialists. Oh, and on your left the division staff lounge. Notice the new coffee maker, part of the FY36…”
+
+It used to be Palin traveled enough he could schedule trips while fancy people like The Board and The Statewide School Administrators Council were visiting the office. On trips, especially to rural Alaska, he avoided any of that pomp and circumstance. On trips he rode in float planes and the back of Sam’s uncle’s cousin’s snow machine. On trips he made decisions on his own, and wore sensible shoes. But over the years, as GACIS grew, there were fewer trips and more and more fancy people in the office.
+
+“New ticket,” Jen announced in his ear. “Priority: High. Assigned by: R.Stone. Acceptance criteria: new coffee maker integrated on the network and fully functional.”
+
+response: corporate, technology, bureaucracy

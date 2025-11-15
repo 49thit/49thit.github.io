@@ -1,0 +1,19 @@
+timestamp: 2025-11-14T22:28:30-09:00
+model: gpt-4o-mini
+
+content(system): You are a helpful assistant that returns concise topic tags as JSON.
+content(user): You are helping publish a serialized science-fiction story. Return JSON that matches the provided schema.
+Constraints:
+- Exactly 3 unique tags.
+- Lowercase kebab-case (letters, numbers).
+- No hyphens, single words only.
+- Do NOT reuse these defaults: alaska, it, scifi.
+- Considering the themes of corporate bureaucracy, technology, and Alaska, generate tags using the short blurb and body below.
+
+Short blurb:
+test
+
+Body:
+test
+
+response: corporate, bureaucracy, technology

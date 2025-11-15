@@ -1,0 +1,11 @@
+episodeNEXT - coming up...
+============%<===============
+alaska, IT, scifi, corporate-life
+============%<===============
+Stay tuned. Next time on 49thIT... Palin tries to make it to his desk...
+============%<===============
+Stay tuned. Next time on 49thIT... Palin tries to make it to his desk.
+
+<hr>
+
+{% include follow_subscribe.html %}
