@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /crossposts/
+Disallow: /llm-context-features.txt
+Disallow: /llm-context-about.txt
+Disallow: /*.txt$
+Sitemap: https://49thit.com/sitemap.xml

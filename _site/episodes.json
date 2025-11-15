@@ -1,0 +1,37 @@
+[
+
+
+  {
+    "title": "episode002 – Entering GACIS HQ",
+    "episode": 2,
+    "slug": "episode002-entering-gacis",
+    "url": "https://49thit.com/episode002-entering-gacis/",
+    "published_at": "2025-11-08T00:00:00-09:00",
+    "tags": ["alaska","IT","scifi","juneau","telephone-hill","corporate-life"],
+    "blurb": "In which the oldest residence in Juneau becomes enshrined in a giant snowglobe...",
+    "image": "https://49thit.com/assets/img/thumbnail.png"
+  },
+
+  {
+    "title": "episode001 – Palin Picks the Right Shoes",
+    "episode": 1,
+    "slug": "episode001-palin-picks-the-right-shoes",
+    "url": "https://49thit.com/episode001-palin-picks-the-right-shoes/",
+    "published_at": "2025-01-01T00:00:00-09:00",
+    "tags": ["alaska","technology","bureaucracy","scifi"],
+    "blurb": "In which our nearly middle-aged IT hero, Palin Warwick, isn't worried about wearing goretex shoes, since it hardly rains in Juneau anymore...",
+    "image": "https://49thit.com/assets/img/thumbnail.png"
+  },
+
+  {
+    "title": "episodeNEXT - coming up... ",
+    "episode": null,
+    "slug": "episodenext-preview",
+    "url": "https://49thit.com/episodenext-preview/",
+    "published_at": "2024-01-01T00:00:00-09:00",
+    "tags": ["alaska","IT","scifi","corporate-life"],
+    "blurb": "Stay tuned. Next time on 49thIT... Palin tries to make it to his desk.",
+    "image": "https://49thit.com/assets/img/thumbnail.png"
+  }
+
+]
