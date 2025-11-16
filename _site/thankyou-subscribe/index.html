@@ -391,7 +391,7 @@ main.page-content {
   
   
   
-  <ul id="post-nav-list" aria-hidden="false">
+  <ul id="post-nav-list" aria-hidden="true">
     
       <li>
         
@@ -441,14 +441,8 @@ main.page-content {
     }
 
     // Initialize ARIA state to match current expansion and CSS
-    let initialExpanded = toggle.getAttribute("aria-expanded") === "true";
-    try {
-      const computed = window.getComputedStyle(list);
-      if (computed && computed.display !== "none") {
-        initialExpanded = true;
-      }
-    } catch (e) {}
-    setExpanded(initialExpanded);
+    // Start collapsed by default
+    setExpanded(false);
 
     function onActivate(event) {
       if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") {
