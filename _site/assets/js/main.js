@@ -331,3 +331,66 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("load", clampFsImage);
   window.addEventListener("resize", debounce(clampFsImage, 150));
 })();
+
+/* 4) Read-all binge image lightbox */
+(function () {
+  function ready(fn) {
+    if (document.readyState !== "loading") {
+      fn();
+    } else {
+      document.addEventListener("DOMContentLoaded", fn, { once: true });
+    }
+  }
+
+  ready(function () {
+    const triggers = document.querySelectorAll(".read-all__image-trigger");
+    const lightbox = document.getElementById("read-all-lightbox");
+    if (!triggers.length || !lightbox) return;
+
+    const imageEl = lightbox.querySelector("img");
+    const dismissers = lightbox.querySelectorAll("[data-lightbox-dismiss]");
+    let activeTrigger = null;
+
+    function openLightbox(trigger) {
+      const src = trigger.getAttribute("data-full-src");
+      if (!src) return;
+      const alt = trigger.getAttribute("data-image-alt") || trigger.getAttribute("aria-label") || "";
+      activeTrigger = trigger;
+      imageEl.src = src;
+      imageEl.alt = alt;
+      lightbox.classList.add("is-active");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      const closeButton = lightbox.querySelector(".read-all-lightbox__close");
+      if (closeButton) closeButton.focus();
+    }
+
+    function closeLightbox() {
+      if (!lightbox.classList.contains("is-active")) return;
+      lightbox.classList.remove("is-active");
+      lightbox.setAttribute("aria-hidden", "true");
+      imageEl.src = "";
+      document.body.style.overflow = "";
+      if (activeTrigger) {
+        activeTrigger.focus();
+        activeTrigger = null;
+      }
+    }
+
+    triggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function () {
+        openLightbox(trigger);
+      });
+    });
+
+    dismissers.forEach(function (dismissEl) {
+      dismissEl.addEventListener("click", closeLightbox);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  });
+})();
