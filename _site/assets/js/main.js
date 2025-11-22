@@ -196,67 +196,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-/* 2) Continue reading panel (uses localStorage + optional meta fallback) */
-(function () {
-  const storageKey = "49thIT:lastPath";
-
-  function onReady(fn) {
-    if (document.readyState !== "loading") {
-      fn();
-    } else {
-      document.addEventListener("DOMContentLoaded", fn, { once: true });
-    }
-  }
-
-  onReady(function () {
-    try {
-      const shouldTrack =
-        !document.body || !document.body.hasAttribute("data-continue-ignore");
-      const currentPath = window.location.pathname;
-      if (
-        shouldTrack &&
-        currentPath &&
-        currentPath !== "/" &&
-        !currentPath.startsWith("/assets/")
-      ) {
-        localStorage.setItem(storageKey, currentPath);
-      }
-
-      const continueLink = document.querySelector("[data-continue-link]");
-      if (!continueLink) return;
-
-      const panel = continueLink.closest("[data-continue-panel]");
-      const messageEl = panel ? panel.querySelector("[data-continue-message]") : null;
-      const storedPath = localStorage.getItem(storageKey);
-
-      // Try data-fallback first (set in index.md), then meta fallback in head
-      const fallbackMeta = document.querySelector('meta[name="fallback-episode"]');
-      const metaFallback = fallbackMeta ? fallbackMeta.content : null;
-
-      const targetPath =
-        (storedPath && storedPath !== "/" ? storedPath : continueLink.dataset.fallback) || metaFallback;
-
-      if (!targetPath) return;
-
-      continueLink.href = targetPath;
-
-      const hasVisited = Boolean(storedPath && storedPath !== "/");
-      continueLink.textContent = hasVisited
-        ? "pickup where you left off..."
-        : "get started with episode001...";
-
-      if (panel) {
-        panel.classList.add("is-active");
-      }
-
-      if (messageEl) {
-        messageEl.textContent = hasVisited ? "" : "";
-      }
-    } catch (error) {
-      console.warn("Continue reading unavailable:", error);
-    }
-  });
-})();
 (function () {
   function onReady(fn) {
     if (document.readyState !== "loading") fn();
