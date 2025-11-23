@@ -362,17 +362,15 @@
     <entry>
       
 
-      <title type="html">episodeNEXT - coming up…</title>
-      <link href="https://49thit.com/episodenext-preview/" rel="alternate" type="text/html" title="episodeNEXT - coming up…" />
+      <title type="html">episodeNEXT</title>
+      <link href="https://49thit.com/episodenext-preview/" rel="alternate" type="text/html" title="episodeNEXT" />
       <id>https://49thit.com/episodenext-preview</id>
       
       
         <content type="html" xml:base="https://49thit.com/episodenext-preview/"><![CDATA[<p>Stay tuned. Next time on 49thIT… Palin nearly makes it to his desk.</p>
 
-<hr />
-
 <div class="follow-subscribe" aria-label="Follow and subscribe">
-  <h3>Follow and subscribe</h3>
+  <div class="fs-heading-space" aria-hidden="true"></div>
 
   <div class="fs-links">
     <a class="fs-link" href="https://9d37c3c3.sibforms.com/serve/MUIFAIsPlk_wumtTpE1lv_OIX99LR0kqRURmJxhbkyPxdNBV27lj7Ibks_EUSoPB2ZoCZ2Obu3eoSbT8Jue-B2maYz4_M7Ttvah07X2gdgctr63NLdTyWbwSQ_rFhE-I_2I-GZo079pgI_frISy728n7_9BSedK_X_f-_-8vgnMIXH6b05M9oPbt1qvCMdcGaFMPb9QoEOTcKPHQUA==" target="_blank" rel="noopener" aria-label="Subscribe to the newsletter">
