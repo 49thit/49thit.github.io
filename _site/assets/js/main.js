@@ -1,4 +1,11 @@
 /* Main site JS: extracted from _layouts/default.html */
+
+/* Shared utility: Execute fn when DOM is ready */
+function onReady(fn) {
+  if (document.readyState !== "loading") fn();
+  else document.addEventListener("DOMContentLoaded", fn, { once: true });
+}
+
 /* 1) Banner typing interaction */
 document.addEventListener("DOMContentLoaded", function () {
   const typedEl = document.querySelector(".site-banner__typed");
@@ -197,11 +204,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 (function () {
-  function onReady(fn) {
-    if (document.readyState !== "loading") fn();
-    else document.addEventListener("DOMContentLoaded", fn, { once: true });
-  }
-
   function debounce(fn, wait) {
     let t;
     return function () {
@@ -273,15 +275,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* 4) Read-all binge image lightbox */
 (function () {
-  function ready(fn) {
-    if (document.readyState !== "loading") {
-      fn();
-    } else {
-      document.addEventListener("DOMContentLoaded", fn, { once: true });
-    }
-  }
-
-  ready(function () {
+  onReady(function () {
     const triggers = document.querySelectorAll(".read-all__image-trigger");
     const lightbox = document.getElementById("read-all-lightbox");
     if (!triggers.length || !lightbox) return;
