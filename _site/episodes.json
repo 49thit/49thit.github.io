@@ -2,6 +2,17 @@
 
 
   {
+    "title": "episode004 – RTFM",
+    "episode": 4,
+    "slug": "episode004-rtfm",
+    "url": "https://49thit.com/episode004-rtfm/",
+    "published_at": "2025-11-16T00:00:00+00:00",
+    "tags": ["alaska","IT","scifi","coffee","technology","rtfm"],
+    "blurb": "In which Palin consults his old friend: The Manual...",
+    "image": "https://49thit.com/assets/img/episode004.webp"
+  },
+
+  {
     "title": "episode003 – Priority Rerouting Complete",
     "episode": 3,
     "slug": "episode003-priority-rerouting-complete",
@@ -41,7 +52,7 @@
     "url": "https://49thit.com/episodenext-preview/",
     "published_at": "2024-01-01T00:00:00+00:00",
     "tags": ["alaska","IT","scifi","corporate-life"],
-    "blurb": "Stay tuned. Next time on 49thIT... Palin finally gets that coffee maker online.",
+    "blurb": "Stay tuned. Next time on 49thIT... Palin nearly makes it to his desk.",
     "image": "https://49thit.com/assets/img/thumbnail.webp?v=2"
   }
 
