@@ -6,7 +6,7 @@
     "episode": 4,
     "slug": "episode004-rtfm",
     "url": "https://49thit.com/episode004-rtfm/",
-    "tags": ["alaska","IT","scifi","coffee","technology","rtfm"],
+    "tags": ["alaska","technology","bureaucracy","coffee","technology","rtfm","helpdesk"],
     "blurb": "In which Palin consults his old friend: The Manual...",
     "image": "https://49thit.com/assets/img/episode004.webp"
   },
@@ -16,7 +16,7 @@
     "episode": 3,
     "slug": "episode003-priority-rerouting-complete",
     "url": "https://49thit.com/episode003-priority-rerouting-complete/",
-    "tags": ["alaska","IT","scifi","ai-assistant","inservice","coffee"],
+    "tags": ["alaska","technology","bureaucracy","toxicoptimism","ai-assistant","inservice","coffee"],
     "blurb": "In which Jen reminds Palin it’s often better to beg forgiveness than seek permission...",
     "image": "https://49thit.com/assets/img/episode003.webp?v=2"
   },
@@ -26,7 +26,7 @@
     "episode": 2,
     "slug": "episode002-entering-gacis",
     "url": "https://49thit.com/episode002-entering-gacis/",
-    "tags": ["alaska","IT","scifi","juneau","telephone-hill","corporate-life"],
+    "tags": ["alaska","technology","bureaucracy","juneau","telephone-hill","corporate-life","acs-gci-merger"],
     "blurb": "In which the oldest residence in Juneau becomes enshrined in a giant snowglobe...",
     "image": "https://49thit.com/assets/img/episode002.webp?v=2"
   },
@@ -36,7 +36,7 @@
     "episode": 1,
     "slug": "episode001-palin-picks-the-right-shoes",
     "url": "https://49thit.com/episode001-palin-picks-the-right-shoes/",
-    "tags": ["alaska","technology","bureaucracy","scifi"],
+    "tags": ["alaska","technology","bureaucracy","shoes","fancy"],
     "blurb": "In which our nearly middle-aged IT hero, Palin Warwick, isn't worried about wearing goretex shoes, since it hardly rains in Juneau anymore...",
     "image": "https://49thit.com/assets/img/episode001.webp?v=2"
   },
@@ -46,7 +46,7 @@
     "episode": null,
     "slug": "episodenext-preview",
     "url": "https://49thit.com/episodenext-preview/",
-    "tags": ["alaska","IT","scifi","corporate-life"],
+    "tags": ["alaska","technology","bureaucracy","corporate-life","coming-up"],
     "blurb": "Stay tuned. Next time on 49thIT... Palin nearly makes it to his desk.",
     "image": "https://49thit.com/assets/img/thumbnail.webp?v=2"
   }

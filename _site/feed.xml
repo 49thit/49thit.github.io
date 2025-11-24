@@ -127,15 +127,17 @@
       
         <category term="alaska" />
       
-        <category term="IT" />
+        <category term="technology" />
       
-        <category term="scifi" />
+        <category term="bureaucracy" />
       
         <category term="coffee" />
       
         <category term="technology" />
       
         <category term="rtfm" />
+      
+        <category term="helpdesk" />
       
 
       
@@ -203,9 +205,11 @@
       
         <category term="alaska" />
       
-        <category term="IT" />
+        <category term="technology" />
       
-        <category term="scifi" />
+        <category term="bureaucracy" />
+      
+        <category term="toxicoptimism" />
       
         <category term="ai-assistant" />
       
@@ -271,15 +275,17 @@
       
         <category term="alaska" />
       
-        <category term="IT" />
+        <category term="technology" />
       
-        <category term="scifi" />
+        <category term="bureaucracy" />
       
         <category term="juneau" />
       
         <category term="telephone-hill" />
       
         <category term="corporate-life" />
+      
+        <category term="acs-gci-merger" />
       
 
       
@@ -343,7 +349,9 @@
       
         <category term="bureaucracy" />
       
-        <category term="scifi" />
+        <category term="shoes" />
+      
+        <category term="fancy" />
       
 
       
@@ -441,11 +449,13 @@
       
         <category term="alaska" />
       
-        <category term="IT" />
+        <category term="technology" />
       
-        <category term="scifi" />
+        <category term="bureaucracy" />
       
         <category term="corporate-life" />
+      
+        <category term="coming-up" />
       
 
       
