@@ -2,11 +2,21 @@
 
 
   {
+    "title": "episode005 – Dropped Packets",
+    "episode": 5,
+    "slug": "episode005-dropped-packets",
+    "url": "https://49thit.com/episode005-dropped-packets/",
+    "tags": ["buffering","dropped-packets","robot","wifi","remote-work","alaska","bureaucracy"],
+    "blurb": "In which Marty from Quality Assurance didn't have time to check the wifi...",
+    "image": "https://49thit.com/assets/img/episode005.webp"
+  },
+
+  {
     "title": "episode004 – RTFM",
     "episode": 4,
     "slug": "episode004-rtfm",
     "url": "https://49thit.com/episode004-rtfm/",
-    "tags": ["alaska","technology","bureaucracy","coffee","technology","rtfm","helpdesk"],
+    "tags": ["alaska","technology","bureaucracy","coffee","rtfm","helpdesk"],
     "blurb": "In which Palin consults his old friend: The Manual...",
     "image": "https://49thit.com/assets/img/episode004.webp"
   },
@@ -16,9 +26,9 @@
     "episode": 3,
     "slug": "episode003-priority-rerouting-complete",
     "url": "https://49thit.com/episode003-priority-rerouting-complete/",
-    "tags": ["alaska","technology","bureaucracy","toxicoptimism","ai-assistant","inservice","coffee"],
+    "tags": ["alaska","technology","bureaucracy","toxic-optimism","ai-assistant","inservice","coffee"],
     "blurb": "In which Jen reminds Palin it’s often better to beg forgiveness than seek permission...",
-    "image": "https://49thit.com/assets/img/episode003.webp?v=2"
+    "image": "https://49thit.com/assets/img/episode003.webp"
   },
 
   {
@@ -28,7 +38,7 @@
     "url": "https://49thit.com/episode002-entering-gacis/",
     "tags": ["alaska","technology","bureaucracy","juneau","telephone-hill","corporate-life","acs-gci-merger"],
     "blurb": "In which the oldest residence in Juneau becomes enshrined in a giant snowglobe...",
-    "image": "https://49thit.com/assets/img/episode002.webp?v=2"
+    "image": "https://49thit.com/assets/img/episode002.webp"
   },
 
   {
@@ -36,9 +46,9 @@
     "episode": 1,
     "slug": "episode001-palin-picks-the-right-shoes",
     "url": "https://49thit.com/episode001-palin-picks-the-right-shoes/",
-    "tags": ["alaska","technology","bureaucracy","shoes","fancy"],
+    "tags": ["alaska","technology","bureaucracy","shoes","fancy","corporate-life","heart"],
     "blurb": "In which our nearly middle-aged IT hero, Palin Warwick, isn't worried about wearing goretex shoes, since it hardly rains in Juneau anymore...",
-    "image": "https://49thit.com/assets/img/episode001.webp?v=2"
+    "image": "https://49thit.com/assets/img/episode001.webp"
   },
 
   {
@@ -46,8 +56,8 @@
     "episode": null,
     "slug": "episodenext-preview",
     "url": "https://49thit.com/episodenext-preview/",
-    "tags": ["alaska","technology","bureaucracy","corporate-life","coming-up"],
-    "blurb": "Stay tuned. Next time on 49thIT... Palin nearly makes it to his desk.",
+    "tags": ["alaska","technology","bureaucracy","corporate-life","remote-work","upcoming","49thit","GACIS"],
+    "blurb": "Stay tuned. Next time on 49thIT... the board members get a show.",
     "image": "https://49thit.com/assets/img/thumbnail.webp?v=2"
   }
 
