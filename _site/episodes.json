@@ -2,6 +2,16 @@
 
 
   {
+    "title": "episode006 – The Robot Goes Berserk",
+    "episode": 6,
+    "slug": "episode006-the-robot-goes-berserk",
+    "url": "https://49thit.com/episode006-the-robot-goes-berserk/",
+    "tags": ["danger","robot","lag","alaska","board"],
+    "blurb": "In which Marty forgets Rule #1...",
+    "image": "https://49thit.com/assets/img/episode006.webp"
+  },
+
+  {
     "title": "episode005 – Dropped Packets",
     "episode": 5,
     "slug": "episode005-dropped-packets",
@@ -57,7 +67,7 @@
     "slug": "episodenext-preview",
     "url": "https://49thit.com/episodenext-preview/",
     "tags": ["alaska","technology","bureaucracy","corporate-life","remote-work","upcoming","49thit","GACIS"],
-    "blurb": "Stay tuned. Next time on 49thIT... the board members get a show.",
+    "blurb": "Stay tuned. Next time on 49thIT... Palin finally makes it to his desk.",
     "image": "https://49thit.com/assets/img/thumbnail.webp?v=2"
   }
 
